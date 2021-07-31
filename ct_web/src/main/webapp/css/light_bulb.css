@@ -1,0 +1,28 @@
+
+.light_bulb{
+    position: relative;
+    top: 0px;
+    font: 700 100px '';
+    color: #333;
+    /* 指定指针样式 */
+    cursor: pointer;
+}
+.light_bulb span{
+    transition: .5s;
+    transition-delay: calc(var(--i)*.1s);
+}
+.light_bulb:hover span{
+    color: rgb(228, 224, 255);
+    text-shadow: 
+    0 0 10px rgb(118, 177, 255),
+    0 0 25px rgb(248, 0, 207),
+    5px 5px 20px rgb(5, 218, 218);
+}
+.light_bulb div{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+

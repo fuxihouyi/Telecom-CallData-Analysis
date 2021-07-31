@@ -1,0 +1,53 @@
+.dropbtn {  
+    width: 160px;
+    background-color: rgba(128, 128, 128, 0.8);
+    color: white;
+    padding: 5px;
+    font-size: 8px;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    border: 1px solid rgb(156, 156, 156);
+}
+
+.dropdown {
+    z-index: 888;
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 3px;
+}
+
+.dropdown-content a {
+    font-size: 8px;
+    color: black;
+    padding: 5px 5px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #e6e6e6}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    animation: drop 2s;
+}
+
+@keyframes drop{
+    from{
+        background-color: rgba(184, 184, 184, 0.6);
+    }top{
+        background-color: rgba(128, 128, 128, 0.8);
+
+    }
+}

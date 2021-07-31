@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.abner.ct.web.dao.CalllogDao" >
+
+
+    <select id="queryMonthDatas" resultType="com.abner.ct.web.bean.Calllog">
+
+        select * from
+        (select * from ct_call where telid = (
+                SELECT
+                ID
+                from ct_user
+                where tel = #{tel}
+        ) and dateid in (
+                SELECT
+                ID
+                from ct_date
+                where year = 2018 and month = #{month} and day != ''
+        )) t1
+        LEFT JOIN
+        ct_date
+        on ct_date.id = t1.dateid
+
+    </select>
+
+    <select id="queryYearDatas" resultType="com.abner.ct.web.bean.Calllog">
+        select * from
+        (select * from ct_call where telid = (
+                SELECT
+                ID
+                from ct_user
+                where tel = #{tel}
+        ) and dateid in (
+                SELECT
+                ID
+                from ct_date
+                where year = 2018 and month != '' and day = ''
+        )) t1
+        LEFT JOIN
+        ct_date
+        on ct_date.id = t1.dateid
+        LEFT JOIN
+        ct_user
+        on ct_user.id = t1.telid;
+    </select>
+
+    <select id="findByUserId" resultType="com.abner.ct.web.bean.Calllog">
+
+        select * from ct_call where telid = #{id};
+
+    </select>
+
+    <select id="AvgCalllog" resultType="com.abner.ct.web.bean.AllCalllogAvg">
+
+        SELECT
+            ct_date.`month`,
+            t.avg_call,
+            t.avg_dura
+        FROM
+            ct_date
+        LEFT JOIN (
+            SELECT
+                dateid,
+                AVG(sumcall) AS avg_call,
+                AVG(sumduration) AS avg_dura
+            FROM
+                ct_call
+            WHERE
+                dateid IN (
+                    SELECT
+                        ID
+                    FROM
+                        ct_date
+                    WHERE
+                        YEAR = '2018'
+                    AND MONTH != ''
+                    AND DAY = ''
+                )
+            GROUP BY
+                dateid
+        ) t ON ct_date.id = t.dateid
+        WHERE
+            ct_date.`year` = '2018'
+        AND ct_date.`month` != ''
+        AND ct_date.`day` = '';
+
+    </select>
+    
+    <select id="userCount" resultType="java.lang.Integer">
+        SELECT
+            COUNT(*)
+        FROM
+            (
+                SELECT DISTINCT
+                    (telid)
+                FROM
+                    ct_call
+                GROUP BY
+                    telid
+            ) t;
+    </select>
+
+</mapper>

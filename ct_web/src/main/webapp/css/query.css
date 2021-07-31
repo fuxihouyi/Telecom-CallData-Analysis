@@ -1,0 +1,189 @@
+.All{
+    width: 100%;
+    height: auto;
+}
+.test{
+    background-color: rgb(255, 255, 255);
+}
+.user{
+    width: 23%;
+    height: 28%;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    color: rgba(205,205,205);
+    background-color: rgba(128, 128, 128, 0.5);
+    box-shadow: 0 0 10px rgba(128, 128, 128, 0.5);
+    border-radius: 3px;
+}
+.selector{
+    width: 23%;
+    height: 5%;
+    position: absolute;
+    left: 5%;
+    top: 37%;
+    background-color: rgba(128, 128, 128, 0.5);
+    box-shadow: 0 0 10px rgba(128, 128, 128, 0.5);
+    border-radius: 3px;
+}
+.selector-inner{
+    position: absolute;
+    right: 10%;
+    top: 20%;
+}
+
+.text-date{
+    width: 23%;
+    height: 50%;
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    box-shadow: 0 0 10px rgba(128, 128, 128, 0.5);
+    border-radius: 3px;
+
+}
+.map-1{
+    width: 60%;
+    height: 43%;
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    box-shadow: 0 0 10px rgba(128, 128, 128, 0.5); 
+    border-radius: 3px;
+
+}
+.map-2{
+    width: 60%;
+    height: 43%;
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+    box-shadow: 0 0 10px rgba(128, 128, 128, 0.5);
+    border-radius: 3px;
+
+}
+.phone{
+    width: 70%;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+}
+.search{
+    width: 20%;
+    height: 33%;
+    background-color: rgba(129, 129, 129, 0.6);
+    float: left;
+    margin: 5% 6% 0% 6%;
+    border: 0.5px rgba(128, 128, 128, 0.8) solid;
+    cursor: pointer;
+    animation: seach-lay 2s infinite;
+    
+}
+@keyframes seach-lay {
+    0%{
+        box-shadow: 0 0 0px rgba(196, 196, 196, 0.6);
+    }
+    5%{
+        box-shadow: 0 0 1px rgba(196, 196, 196, 0.6);
+    }
+    10%{
+        box-shadow: 0 0 2px rgba(196, 196, 196, 0.6);
+    }
+    15%{
+        box-shadow: 0 0 3px rgba(196, 196, 196, 0.6);
+    }
+    20%{
+        box-shadow: 0 0 4px rgba(196, 196, 196, 0.6);
+    }
+    25%{
+        box-shadow: 0 0 5px rgba(196, 196, 196, 0.6);
+    }
+    30%{
+        box-shadow: 0 0 6px rgba(196, 196, 196, 0.6);
+    }
+    35%{
+        box-shadow: 0 0 7px rgba(196, 196, 196, 0.6);
+    }
+    40%{
+        box-shadow: 0 0 8px rgba(196, 196, 196, 0.6);
+    }
+    45%{
+        box-shadow: 0 0 9px rgba(196, 196, 196, 0.6);
+    }
+    50%{
+        box-shadow: 0 0 10px rgba(196, 196, 196, 0.6);
+    }
+    55%{
+        box-shadow: 0 0 9px rgba(196, 196, 196, 0.6);
+    }
+    60%{
+        box-shadow: 0 0 8px rgba(196, 196, 196, 0.6);
+    }
+    65%{
+        box-shadow: 0 0 7px rgba(196, 196, 196, 0.6);
+    }
+    70%
+    {
+        box-shadow: 0 0 6px rgba(196, 196, 196, 0.6);
+    }
+    75%{
+        box-shadow: 0 0 5px rgba(196, 196, 196, 0.6);
+    }
+    80%{
+        box-shadow: 0 0 4px rgba(196, 196, 196, 0.6);
+    }
+    85%{
+        box-shadow: 0 0 3px rgba(196, 196, 196, 0.6);
+    }
+    90%{
+        box-shadow: 0 0 2px rgba(196, 196, 196, 0.6);
+    }
+    95%{
+        box-shadow: 0 0 1px rgba(196, 196, 196, 0.6);
+    }
+    100%{
+        box-shadow: 0 0 0px rgba(196, 196, 196, 0.6);
+    }
+    
+}
+
+/* .search2{
+    width: 20%;
+    height: 30%;
+    background-color: rgba(128, 128, 128, 0.8);;
+    float: left;
+    margin: 10% 6.5%;
+}
+.search3{
+    width: 20%;
+    height: 30%;
+    background-color: rgba(128, 128, 128, 0.8);;
+    float: left;
+    margin: 10% 6.5%;
+} */
+.ct-img{
+    width: 90%;
+    height: 20%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 2%;
+}
+
+.choose-img{
+    width: 60%;
+    height: 60%;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    top: 10%;
+}
+
+.choose-font{
+    position: relative;
+    width: 100%;
+    left: 10%;
+    top: 5%;
+    color: #cdcdcd;
+}
+

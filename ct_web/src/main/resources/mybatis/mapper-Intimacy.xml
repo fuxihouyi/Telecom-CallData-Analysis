@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.abner.ct.web.dao.IntimacyDao" >
+    <select id="queryIntimacy" resultType="com.abner.ct.web.bean.Intimacy">
+
+SELECT
+    NAME,
+    Intimacy,
+    call_count,
+    call_duration_count
+FROM
+    (
+        SELECT
+            contact_id1,
+            contact_id2,
+            call_count,
+            call_duration_count,
+            (
+                    call_count / (
+                    SELECT
+                        sumcall
+                    FROM
+                        ct_call
+                    WHERE
+                        dateid = 1
+                      AND telid = (
+                        SELECT
+                            id
+                        FROM
+                            ct_user
+                        WHERE
+                            tel = #{tel}
+                    )
+                )
+                ) / (
+                    call_duration_count / (
+                    SELECT
+                        sumduration
+                    FROM
+                        ct_call
+                    WHERE
+                        dateid = 1
+                      AND telid = (
+                        SELECT
+                            id
+                        FROM
+                            ct_user
+                        WHERE
+                            tel = #{tel}
+                    )
+                )
+                ) AS Intimacy,
+            @rownum := @rownum + 1 AS rank
+        FROM
+            tb_intimacy,
+            (SELECT @rownum := 0) r
+        WHERE
+            contact_id1 = #{tel}
+        ORDER BY
+            Intimacy ASC
+    ) t1
+        LEFT JOIN ct_user ON tel = contact_id2 order by Intimacy  LIMIT 0,6;;
+
+    </select>
+
+</mapper>

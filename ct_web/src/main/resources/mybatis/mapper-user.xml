@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.abner.ct.web.dao.CtUserDao" >
+
+
+    <select id="findAll" resultType="com.abner.ct.web.bean.CtUser">
+
+        select * from ct_user;
+
+    </select>
+
+    <select id="findByTelid" resultType="com.abner.ct.web.bean.CtUser">
+        select * from ct_user where id=#{telid}
+    </select>
+
+    <select id="findByTel" resultType="com.abner.ct.web.bean.CtUser">
+        select * from ct_user where tel=#{tel}
+    </select>
+
+</mapper>

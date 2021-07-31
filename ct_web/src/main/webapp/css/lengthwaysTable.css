@@ -1,0 +1,36 @@
+.mailTable{
+    width: 90%;
+    position: relative;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%,-50%);
+}
+.mailTable tr td{
+    width: 200px;
+    height: 35px;
+    line-height: 35px;
+    box-sizing: border-box;
+    padding: 0 10px;
+    border-bottom: 2px solid #646464;
+}
+.mailTable tr td.column {
+    font-size: 14px;
+    font-weight: 500;
+    background-color: #ffffff44;
+    border-left: #646464 3px solid;
+    color: #393C3E;
+    width: 30%;
+}
+.mailTable tr{
+    display: block;
+    margin-bottom: 1%;
+   
+}
+.mailTable .column{
+    text-shadow: 0 0 5px white;
+}
+.mailTable .column2{
+    color: white;
+    letter-spacing: 1px;
+    text-shadow: 0 0 5px rgb(0, 0, 0);
+}
